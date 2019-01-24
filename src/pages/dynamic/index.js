@@ -3,11 +3,11 @@ import { connect } from 'dva'
 import styles from './dynamic.less'
 import Cookies from 'js-cookie'
 import { Base64 } from 'js-base64'
-import Pagination from '../components/pagination/pagination'
+import Pagination from '../../components/pagination/pagination'
 
 
 
-    class Dynamic extends React.Component {
+class Dynamic extends React.Component {
     state = {
         dynamicDetail: {
             visible: false,

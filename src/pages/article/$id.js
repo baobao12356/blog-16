@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'dva'
 import ReactHtmlParser from 'react-html-parser'
-import styles from '../article.less'
+import styles from './article.less'
 const Detail = props => {
     console.log(props)
     function handleClose({ nativeEvent: { target } }, _id) {

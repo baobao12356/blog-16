@@ -12,7 +12,7 @@ import Loading from '../components/loading/loading'
 function Container(props) {
     console.log(props)
     const navs = [
-        { text: 'Home', url: '/home' },
+        { text: 'Home', url: '/' },
         { text: 'Moments', url: '/dynamic' },
         { text: 'Article', url: '/article' },
         { text: 'Message', url: '/message' },

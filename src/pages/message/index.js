@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'dva'
 // import Pagination from './../pagination/pagination'
 import Cookies from 'js-cookie'
-import Pagination from '../components/pagination/pagination'
+import Pagination from '../../components/pagination/pagination'
 
 import styles from './message.less'
 import { Base64 } from 'js-base64'

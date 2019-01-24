@@ -10,7 +10,7 @@ class Index extends React.Component {
   }
   changeLogin(type) {
     this.setState({
-      isLogin: type === 'login'
+      isLogin: type === 'login'  
     })
   }
   handelKeyDown(e) {
