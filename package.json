@@ -1,38 +1,30 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "koa.js",
-  "engines": {
-    "node": "8.11.3"
-  },
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node koa.js"
-  },
-  "author": "Ada",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-remove-strict-mode": "0.0.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-remove-use-strict": "^0.0.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.0"
+    "start": "roadhog server",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
   },
   "dependencies": {
-    "ejs": "^2.6.1",
-    "js-base64": "^2.4.8",
-    "koa": "^2.5.2",
-    "koa-bodyparser": "^4.2.1",
-    "koa-json": "^2.0.2",
-    "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0",
-    "koa-views": "^6.1.4",
-    "mongoose": "^5.2.6"
+    "dva": "^2.4.1",
+    "js-base64": "^2.5.0",
+    "js-cookie": "^2.2.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-html-parser": "^2.0.2",
+    "react-quill": "^1.3.3"
+  },
+  "devDependencies": {
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "eslint": "^4.14.0",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.12.0",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^2.0.0"
   }
 }
