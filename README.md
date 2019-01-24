@@ -71,7 +71,7 @@ module.exports = mongoose.model('users', mongoose.Schema({
         type: Bollean,
         default: false
     }
-})) //  **the admin's property 'admin' must be 'true' or some operation won't be work !**  
+})) 
 ```
 
 URL  https://adaxh.applinzi.com

@@ -1,0 +1,68 @@
+footer{
+     height: 0.5rem;
+     width:100%;
+     position: fixed;
+     bottom:0;
+     z-index: 1;
+     transform: translate3d(0,0,0);
+}
+ footer, header{
+     transition: all .3s;
+}
+ .hideHeader{
+     transform: translate3d(0, -100%, 0);
+}
+ .hideFooter{
+     transform: translate3d(0, 100%, 0);
+}
+ footer ul {
+     display: flex;
+     width:100%;
+}
+ footer ul li{
+     flex: 1;
+     line-height: 0.5rem;
+     text-align: center;
+}
+ footer ul li a {
+     color: black 
+}
+ footer ul li a i {
+     font-size: 0.18rem !important;
+     margin: 0.05rem;
+     position: relative;
+     top:0rem;
+}
+ .toTop{
+     position: absolute;
+     right: 0.2rem;
+     width: 0.4rem;
+     bottom: 0.6rem;
+    /* opacity: .6;
+     */
+     height: 0.4rem;
+     border-radius: 0.2rem;
+     overflow: hidden;
+     line-height: 0.43rem;
+     color: white;
+     background: #088cd0;
+     animation: toTop .3s;
+     transform: translate3d(0,100%,0);
+     animation-fill-mode: forwards;
+}
+ @keyframes toTop{
+     form{
+        /* opacity: 0;
+         */
+         transform: translate3d(0,100%,0) 
+    }
+     to{
+        /* opacity: .6;
+         */
+         transform: translate3d(0,0,0) 
+    }
+}
+ .toTop i{
+     font-size: 0.25rem;
+}
+ 

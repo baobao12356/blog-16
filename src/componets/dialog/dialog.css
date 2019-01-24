@@ -1,0 +1,103 @@
+.editDialog{
+     position: fixed;
+     width: 3.4rem;
+     height: auto;
+     top:50%;
+     left:50%;
+     background:white;
+     border-radius: 0.05rem;
+     overflow: hidden;
+     z-index: 100;
+     transform-style: preserve-3d;
+     perspective: 10rem;
+}
+ .dialogFooter{
+     display: flex;
+}
+ .uploadContainer{
+     width:3rem;
+     position: relative;
+     height: 1.5rem;
+     margin: 0 auto;
+}
+ .uploadContainer input, .uploadContainer img{
+     display: block;
+     position: absolute;
+     top: 0;
+     left:0;
+     width:100%;
+     height: 100%;
+}
+ .uploadContainer input {
+     opacity:0;
+     z-index: 1;
+}
+ .dialogFooter a {
+     display: block;
+     flex: 1;
+     color:#40a9ff;
+     margin: 0;
+     border: none;
+     box-shadow: none;
+}
+ .dialogFooter a:nth-of-type(1){
+     color:rgba(0,0,0,0.25) 
+}
+ .inputTitle{
+     font-size: 0.14rem;
+     display: block;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+}
+ div.dialogAnimation{
+     will-change: opacity, transform;
+     transform-style: preserve-3d;
+     transform-origin: center;
+     animation: dialogAnimation .45s;
+     animation-fill-mode: forwards;
+}
+ div.am-modal-button-group-h a:nth-of-type(2){
+     color:#ff4e4e 
+}
+ @keyframes dialogAnimation {
+     from {
+         transform: translate3d(-50%,-50%,0)scale3d(1.3,1.3,1.3);
+         opacity: 0;
+    }
+     to {
+         transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+         opacity: 1;
+    }
+}
+ .editBg{
+     width:100%;
+     height: 100%;
+     position: fixed;
+     z-index: 100;
+     background: rgba(0,0,0,0.25);
+}
+ .editDialog .am-textarea-count{
+     bottom: 0rem;
+     right: 0.24rem;
+}
+ .editDialog .am-list-item{
+     padding: 0;
+     background: white;
+}
+ .editDialog .am-textarea-control{
+     padding: 0;
+     background: white;
+}
+ .editDialog .am-textarea-control textarea{
+     width: 3rem;
+     height: 2.2rem;
+     padding: 0.2rem;
+     display: block;
+     margin: 0 auto;
+     background: white;
+     border-radius: 0.05rem;
+     white-space: pre-wrap;
+     font-size: 0.13rem;
+}
+ 

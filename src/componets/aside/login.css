@@ -1,0 +1,194 @@
+.loginContainer{
+     width: 100%;
+     height: 100%;
+     -webkit-transition: all .4s;
+     transition: all .4s;
+     background: radial-gradient(circle at 50% 34%, #1099c9, #1167b0);
+     position: fixed;
+     z-index: 10;
+     -webkit-transform: translateX(-102%);
+     transform: translateX(-102%);
+     will-change: transform;
+     -webkit-transform-style: preserve-3d;
+     transform-style: preserve-3d;
+     left: 0;
+     top:0;
+}
+ .loginRegContainer{
+     width:100%;
+     height: 100%;
+     bottom:0;
+     left:0;
+     background: radial-gradient(circle at 50% 34%, #1099c9, #1167b0);
+     transition: all .3s;
+     z-index: 11;
+     transform: translateX(100%);
+     position: absolute;
+     overflow: hidden;
+     overflow-y: scroll;
+     -webkit-overflow-scrolling: touch;
+}
+ .loginLogo{
+     color:white;
+     font-weight: bold;
+}
+ .loginLogo .loginLogoDiv:nth-of-type(1){
+     width:0.5rem;
+     height: 0.5rem;
+     display: block;
+     line-height: 0.54rem;
+     text-align: center;
+     border-radius: 0.25rem;
+     background: #1890ff;
+     margin: 0 auto;
+}
+ .loginLogo .loginLogoDiv:nth-of-type(2){
+     color: white;
+}
+ .loginLogo i {
+     font-size: 0.2rem;
+}
+ .backIcon{
+     width:0.5rem;
+     height:0.5rem;
+     margin:0.2rem;
+     text-align: center;
+     line-height: 0.5rem;
+     color:white;
+     margin-left: -0.1rem;
+}
+ .showContainer{
+     transform: translateX(0) 
+}
+ .asideToggle{
+     transform: translateX(0%) !important;
+}
+ .entrySwitch{
+     position: absolute;
+     top:50%;
+     right:-0.3rem;
+     width:0.5rem;
+     height: 0.5rem;
+     border-radius: 0.25rem;
+    /* background: #088cd0;
+     */
+     padding-left: 0.2rem;
+     z-index:1;
+     margin-top: -0.25rem;
+}
+ .entrySwitch i {
+     font-size: 0.19rem;
+     line-height: 0.57rem;
+    /* transition: all .6s;
+     transform: rotate(0deg);
+     */
+     color:white;
+}
+ .entrySwitch i.toggle{
+     transform: rotate(180deg);
+     line-height: 0.47rem;
+}
+ .leftContainer{
+     width:100%;
+     height:80%;
+     flex-direction: column;
+     display: flex;
+     margin: 10% auto;
+}
+ .avatarContainer{
+     width:100%;
+     height:1.3rem;
+     position: relative;
+     top:0.8rem;
+}
+ .avatarContainer img{
+     width:1rem;
+     height: 1rem;
+     margin: 0 auto;
+     border: 1px solid white;
+     border-radius: 0.5rem;
+     display: block;
+     position: absolute;
+     left:50%;
+     margin-left: -0.5rem;
+}
+ .upload{
+     width:1rem;
+     height: 1rem;
+     margin: 0 auto;
+     border: 1px solid white;
+     border-radius: 0.5rem;
+     display: block;
+     overflow: hidden;
+     position: absolute;
+     z-index: 1;
+     left:50%;
+     opacity: 0;
+     margin-left: -0.5rem;
+}
+ .upload span, .upload div, .upload input {
+     width:100%;
+     height:100%;
+     display: block !important;
+}
+ .userName{
+     display: block;
+     position: absolute;
+     left:50%;
+     width:1rem;
+     text-align: center;
+     color:white;
+     bottom:0;
+     margin-left: -0.5rem;
+}
+ .operationListContainer{
+     position: relative;
+     flex: 1;
+}
+ .operationList{
+     width:2rem;
+     text-align: left;
+    /* margin-left: 40%;
+     */
+     position: absolute;
+     top:50%;
+     transform: translateY(-50%);
+     color:white;
+}
+ .operationList li a {
+     color:white;
+}
+ .operationItem{
+     height: 0.4rem;
+     line-height: 0.4rem;
+     padding-left: 0.3rem;
+}
+ .operationItem i {
+     position: relative;
+     right:0.03rem;
+}
+ .loginRegContainer .ant-checkbox-wrapper{
+     float: left;
+}
+ #components-form-demo-normal-login .login-form {
+     max-width: 3rem;
+}
+ #components-form-demo-normal-login .login-form-forgot {
+     float: right;
+}
+ .loginRegContainer .login-form-button {
+     width: 100%;
+}
+ .loginRegContainer .ant-form-item{
+     margin-bottom: 0.1rem !important;
+     height: 0.5rem !important;
+}
+ .loginRegContainer ._input{
+     height: 0.4rem !important;
+     display: block;
+}
+ .loginRegContainer .ant-form-item-control-wrapper, .ant-form-item-control, .ant-form-item-children{
+     height: 0.42rem;
+     display: block;
+}
+ 
