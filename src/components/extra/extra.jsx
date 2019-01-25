@@ -19,7 +19,6 @@ const Extra = props => {
         const left = parentNode.offsetLeft
         const el = document.getElementsByClassName(s.imgCon)[0]
         el.parentNode.style.display = 'block'
-        // el.style.display = 'block'
         el.children[0].src = src
         const PARENT_WIDTH = el.parentNode.offsetWidth
         const PARENT_HEIGHT = el.parentNode.offsetHeight       
