@@ -78,10 +78,7 @@ const Message = props => {
     const leaveMsg = (type, _id, toRepeat) => {
         const { user, dispatch } = props
         // if (!user.isLogin && !Cookies.get('user')) {
-        //     dispatch({
-        //         type: 'toast/open',
-        //         payload: { type: 'fail', msg: '请先登录！' }
-        //     })
+        // dispatch({type: 'toast/open',payload: { type: 'fail', msg: '请先登录！' }})
         // } else {
         const cb = data => {
             if (!data || data.trim() === '') {
@@ -188,6 +185,7 @@ const Message = props => {
             props.dispatch({ type: 'message/init' })
         }
     }
+    const { user, dispatch } = props
     return (
         <div className={styles.messageContainer}>
             {
@@ -198,7 +196,7 @@ const Message = props => {
                     <div className={styles.dot}></div>
                     <div className={styles.dotToLine}></div>
                     <div className={styles.dotToLine2}></div>
-                    <div onClick={() => leaveMsg('leaveMsg')} className={styles.addMsg}>Leave a message?</div>
+                    <div onClick={() => !user.isLogin && !Cookies.get('user') ? dispatch({type: 'toast/open',payload: { type: 'fail', msg: '请先登录！' }})  : leaveMsg('leaveMsg')} className={styles.addMsg}>Leave a message?</div>
                 </div>
                 <div className={styles.messageListWrap}>
                     <ul className={styles.mssageList}>
