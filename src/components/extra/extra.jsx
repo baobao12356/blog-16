@@ -4,52 +4,82 @@ import s from './extra.less'
 const Extra = props => {
     const imgs = [
         { imgs: ['https://adaxh.applinzi.com/resouce/gallery/1.jpg'] },
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/2.jpg']},
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/3.jpg'] },  
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/4.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg','https://adaxh.applinzi.com/resouce/gallery/12.jpg'] },     
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/5.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },        
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/2.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/3.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/4.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg', 'https://adaxh.applinzi.com/resouce/gallery/12.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/5.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },
         { imgs: ['https://adaxh.applinzi.com/resouce/gallery/6.jpg'] },
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/8.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },     
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/9.jpg', 'https://adaxh.applinzi.com/resouce/gallery/11.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },     
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/10.jpg'] }        ,
-        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/5.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },                                               
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/8.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/9.jpg', 'https://adaxh.applinzi.com/resouce/gallery/11.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/10.jpg'] },
+        { imgs: ['https://adaxh.applinzi.com/resouce/gallery/5.jpg', 'https://adaxh.applinzi.com/resouce/gallery/7.jpg'] },
     ]
-    const handleShow = ({ nativeEvent: { target: { parentNode } } }, src) => {
-        const top = parentNode.offsetTop
-        const left = parentNode.offsetLeft
-        const el = document.getElementsByClassName(s.imgCon)[0]
-        el.parentNode.style.display = 'block'
-        el.children[0].src = src
-        const PARENT_WIDTH = el.parentNode.offsetWidth
-        const PARENT_HEIGHT = el.parentNode.offsetHeight       
-        const CONTAINER_WIDTH = 600
-        const CONTAINER_HEIGHT = 400        
-        el.style.cssText = `transform: translate(${left - parentNode.offsetWidth / 2}px, ${top}px) scale(0);opacity: 0; transition: all 0s;`                                
-        setTimeout(() => {
-            el.style.cssText = `transform: translate(${PARENT_WIDTH / 2 - CONTAINER_WIDTH / 2}px, ${PARENT_HEIGHT / 2 - CONTAINER_HEIGHT / 2 - 120}px) scale(1); opacity:1; transition: all 0.6s;`
-        }, 10);
-    } 
-    return(
+    const handleShow = e => {
+        const { target } = e.nativeEvent
+        if (target.tagName.toUpperCase() === 'IMG') {
+            const CONTAINER_WIDTH = 900
+            const CONTAINER_HEIGHT = 600
+            const CONTENT_TOP = 120
+            const left = e.clientX - CONTAINER_WIDTH / 2
+            const clienX = e.clientX
+            const top = e.clientY - CONTAINER_HEIGHT / 2 - CONTENT_TOP
+            const el = document.getElementsByClassName(s.imgCon)[0]
+            const bigImg = el.children[0]
+            let timmer1 = null
+            let timmer2 = null
+            bigImg.addEventListener('click', e => { //开始缩小 
+                const handleAsync = () => {
+                    return new Promise(resolve => {
+                        el.style.cssText = `transform: translate(${left}px, ${top}px) scale(0.3); opacity: 0.5;`
+                        clearTimeout(timmer1)
+                        timmer1 = setTimeout(() => {
+                            resolve()
+                        }, 400);
+                    })
+                }
+                handleAsync().then(() => {
+                    bigImg.parentNode.parentNode.style.display = 'none'
+                    target.style.cssText = 'opacity: 0.5;transition: all 1s;'
+                })
+            }, false)
+            const handleAsyncImg = () => {
+                return new Promise(resolve => {
+                    bigImg.src = target.src
+                    el.parentNode.style.display = 'block'
+                    el.style.cssText = `transition: all 0s; transform: translate(${left}px, ${top}px) scale(0.3)`
+                    target.style.cssText = 'opacity: 0;transition: all 0s;'
+                    clearTimeout(timmer2)
+                    timmer2 = setTimeout(() => {
+                        resolve()
+                    }, 10);
+                })
+            }
+            handleAsyncImg().then(() => {
+                el.style.cssText = `transform: translate(${clienX / 2}px, ${CONTAINER_HEIGHT / 2 + CONTENT_TOP - 380}px) scale(1); opacity:1; transition: all 0.5s;`
+            })
+        }
+    }
+    return (
         <div className={s.extraContainer}>
             <div className={s.bigImg}>
                 <div id='imgCon' className={s.imgCon}>
-                    <img src="" alt="" onClick={e => e.nativeEvent.target.parentNode.parentNode.style.display = 'none'}/>
+                    <img src="" alt="" />
                 </div>
             </div>
-            <div className={s.galleryContainer}>
-            {
-                imgs.map((item, i) => {
-                    return(
-                        <div key={i} className={s.imgContainer}>
-                            {item.imgs.map((_item, i) => {
-                                return(
-                                    <img onClick={(e) => handleShow(e, _item)} key={i} src={_item} alt=''/>
-                                )
-                            })}
-                        </div>
-                    )
-                })
-            }
+            <div className={s.galleryContainer} onClick={(e) => handleShow(e)}>
+                {
+                    imgs.map((item, i) => {
+                        return (
+                            <div key={i} className={s.imgContainer}>
+                                {item.imgs.map((_item, i) => {
+                                    return (
+                                        <img key={i} src={_item} alt='' />
+                                    )
+                                })}
+                            </div>
+                        )
+                    })
+                }
             </div>
             {/* <div className={s.showStage}>
                     <div className={s.showContainer}>
