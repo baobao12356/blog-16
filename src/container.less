@@ -1,0 +1,96 @@
+html, body{
+     height: 100%;
+     overflow-x: hidden;
+       font-family: Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+.App, #root {
+     text-align: center;
+     width: 100%;
+     height: 100%;
+     overflow-x: hidden;
+     background: radial-gradient(circle at 50% 34%, #1099c9, #1167b0);
+}
+ body, ul, li, ol, dl, dt, dd, figure, figcaption, a, p, h1, h2, h3, h4, h5, h6, input, form, button {
+     padding: 0;
+     margin: 0;
+}
+ul{list-style: none;}
+ a:link{
+     text-decoration: none !important;
+}
+input, button, textarea{
+    outline: none;
+}
+ a:visited{
+     text-decoration: none !important;
+}
+ a:hover{
+     text-decoration: none !important;
+}
+ a:active{
+     text-decoration: none !important;
+}
+
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 3em;
+  text-align: center;
+}
+#root{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  // .containerCenter{
+  //   width:1200px;
+  //   height: 100%;
+  //   margin: 0 auto;
+  // }
+  section{
+    position: absolute;
+    top:120px;
+    width: 100%;
+    height: 100%;
+  }
+  .bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background: url(/assets/bg2.jpg) no-repeat center 0;   
+    background-size: cover; 
+  }
+  .bgOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: rgba(74, 74, 74, 0.64);
+  }
+}
+.title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+
+.list {
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+.list code {
+  background: #f7f7f7;
+}
